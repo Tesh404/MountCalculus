@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwf0vpenw7mrr"]
+
+[ext_resource type="Script" path="res://scripts/Bosses/dragon.gd" id="1_n8mvc"]
+[ext_resource type="Texture2D" uid="uid://bnxx0oo0xo43i" path="res://assets/sprites/Bosses/Dragon/Sprite/IDLE.png" id="1_rwkos"]
+[ext_resource type="Texture2D" uid="uid://cpyvlrc5ic3vv" path="res://assets/sprites/Bosses/Dragon/Sprite/DEATH.png" id="3_boibx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieopx"]
+atlas = ExtResource("3_boibx")
+region = Rect2(0, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycs2t"]
+atlas = ExtResource("3_boibx")
+region = Rect2(140, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_251ma"]
+atlas = ExtResource("3_boibx")
+region = Rect2(280, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i22x"]
+atlas = ExtResource("3_boibx")
+region = Rect2(420, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c4mo"]
+atlas = ExtResource("1_rwkos")
+region = Rect2(0, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfxrp"]
+atlas = ExtResource("1_rwkos")
+region = Rect2(140, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_444gl"]
+atlas = ExtResource("1_rwkos")
+region = Rect2(280, 0, 140, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hew8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieopx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycs2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_251ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i22x")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c4mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfxrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_444gl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Dragon" type="Node2D"]
+script = ExtResource("1_n8mvc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hew8u")
+animation = &"death"
+autoplay = "default"

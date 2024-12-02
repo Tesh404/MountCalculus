@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://4uvubjg0kt47"]
+
+[ext_resource type="Texture2D" uid="uid://deqh1wr3tfc7b" path="res://assets/Tileset/WinterPackNAv2/Tileset/ExampleTileset.png" id="2_fyu5i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p712l"]
+size = Vector2(28, 6.5)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-8, 1)
+texture = ExtResource("2_fyu5i")
+region_enabled = true
+region_rect = Rect2(192, 96, 16, 11)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(8, 1)
+texture = ExtResource("2_fyu5i")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(192, 96, 16, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p712l")
+one_way_collision = true

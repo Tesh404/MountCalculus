@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cmw1ewit7bgub"]
+
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="1_qghos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdr20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wuqd5"]
+bg_color = Color(0.00517514, 0.00745072, 0.0031156, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hhfjk"]
+
+[resource]
+ItemList/colors/font_color = Color(0, 0, 0, 1)
+ItemList/colors/font_hovered_color = Color(1, 1, 1, 1)
+ItemList/font_sizes/font_size = 16
+ItemList/fonts/font = ExtResource("1_qghos")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_qdr20")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_wuqd5")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_hhfjk")

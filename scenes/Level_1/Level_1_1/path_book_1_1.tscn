@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://cof0q85j1e1xl"]
+
+[ext_resource type="Script" path="res://scripts/Level_1/Level_1_1/path_book_1_1.gd" id="1_l2uau"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_fdfe2"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="2_yana6"]
+[ext_resource type="Texture2D" uid="uid://5vbv6coougkt" path="res://assets/sprites/Kasaya's Frames/Book/Item or quest book1.png" id="3_6emyb"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_7wrho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyeg2"]
+size = Vector2(32, 61)
+
+[node name="path_book_1_1" type="Node2D"]
+script = ExtResource("1_l2uau")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_fdfe2")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22.5)
+shape = SubResource("RectangleShape2D_gyeg2")
+
+[node name="Page_1" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_6emyb")
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 50.0
+offset_right = 221.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yana6")
+text = "            Question
+
+
+f(x) = 6x - 2
+
+g(x) = 3x + 5
+
+If x = 3, what is f ∘ g? "
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 56.0
+offset_right = 457.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yana6")
+text = "         Pathway
+
+Take the upper path if you
+belive the answer is 84.
+
+
+
+Take the lower path if you
+believe the answer is 82.
+"
+
+[node name="Interact Label" parent="." instance=ExtResource("5_7wrho")]
+visible = false
+offset_left = -58.0
+offset_top = -70.0
+offset_right = 68.0
+offset_bottom = -47.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

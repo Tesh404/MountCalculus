@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtjdopnvhwi5x"]
+
+[ext_resource type="Texture2D" uid="uid://ua0owq8ts77i" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/Sign1.png" id="1_kb8ed"]
+
+[node name="sign_1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kb8ed")

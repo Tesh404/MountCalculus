@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://huf7uhsqch21"]
+
+[ext_resource type="Texture2D" uid="uid://b808qn13gxpi3" path="res://assets/sprites/LavaCavesPackv1/Decorations/RuinsDecorations.png" id="1_j7qew"]
+
+[node name="cave_arch" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j7qew")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(71, 7, 49, 57)

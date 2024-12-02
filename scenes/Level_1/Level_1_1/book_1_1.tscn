@@ -1,0 +1,276 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3nrquhv5rjl7"]
+
+[ext_resource type="Script" path="res://scripts/Level_1/Level_1_1/book_1_1.gd" id="1_fekyb"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="2_0sv72"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_fssv4"]
+[ext_resource type="Texture2D" uid="uid://5vbv6coougkt" path="res://assets/sprites/Kasaya's Frames/Book/Item or quest book1.png" id="3_vss45"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="5_jomii"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_tcpkc"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_8y5f2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhydu"]
+size = Vector2(27, 35)
+
+[node name="book_1_1" type="Node2D"]
+script = ExtResource("1_fekyb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -21)
+scale = Vector2(1, 0.90625)
+texture = ExtResource("2_fssv4")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_uhydu")
+
+[node name="Page_1" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_vss45")
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 55.0
+offset_right = 221.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "         Composite Functions
+
+Functions can also take other
+functions as input.
+
+This is known as composition.
+
+Composition is usually represented
+by the ∘ symbol, for example,
+suppose there are two functions,
+f(x) and g(x):
+
+f(x) = 2x - 2 
+g(x) = x² - 4
+
+"
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 324.0
+offset_right = 72.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 1/6"
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 324.0
+offset_right = 458.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 2/6"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 62.0
+offset_right = 466.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "
+Here, f ∘ g means that the function
+\"g\" is an input of function \"f\", as 
+g is to the right of the symbol.
+
+
+This can also be written as:
+- f(g(x)), or
+- f[g(x)]
+
+
+So, how can f ∘ g be solved here?"
+
+[node name="Page_2" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_vss45")
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 61.0
+offset_right = 223.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Since this can also be written as
+f[g(x)]
+
+We can re-write the composite 
+function as: f[x² - 4]
+
+And since f(x) = 2x - 2:
+f[g(x)] = 2(x² - 4) - 2
+Simplified:
+        = 2x² - 8 - 2
+        = 2x² - 10"
+
+[node name="Label2" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 60.0
+offset_right = 469.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Using this, we can also solve 
+g ∘ f:
+
+g[f(x)] = (2x - 2)² - 4
+        = (2x - 2)(2x - 2) - 4
+Simplified:
+        = 4x² - 4x - 4x + 4 - 4
+        = 4x² - 8x 
+"
+
+[node name="Label5" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 324.0
+offset_right = 72.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 3/6"
+
+[node name="Label6" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 324.0
+offset_right = 458.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 4/6"
+
+[node name="Page_3" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_vss45")
+
+[node name="Label" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 58.0
+offset_right = 230.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "We can also solve composite
+functions when x is given a value:
+
+
+Suppose f(x) = 3x + 3
+and g(x) = x² - 2
+
+If x = 3, how can we solve f ∘ g?
+or f[g(x)]
+
+First, we have to solve g(x), which
+in this case is g(3).
+g(3) = 3² - 2, which is 7."
+
+[node name="Label2" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 57.0
+offset_right = 465.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "So now f[g(x)] = f[g(3)], which can
+again be rewritten as f[7], since 
+we solved g(3) previously.
+
+f[7] = 3(7) + 3 
+     = 21 + 3
+     = 24
+
+So the answer to f ∘ g in this 
+context would be 24."
+
+[node name="Label7" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 324.0
+offset_right = 458.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 6/6"
+
+[node name="Label8" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 324.0
+offset_right = 72.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0sv72")
+text = "Page 5/6"
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 182.0
+offset_top = 38.0
+offset_right = 219.0
+offset_bottom = 55.0
+theme = ExtResource("5_tcpkc")
+theme_override_fonts/font = ExtResource("5_jomii")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -224.0
+offset_top = 38.0
+offset_right = -186.0
+offset_bottom = 55.0
+theme = ExtResource("5_tcpkc")
+theme_override_fonts/font = ExtResource("5_jomii")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_8y5f2")]
+visible = false
+offset_left = -59.0
+offset_top = -41.0
+offset_right = 67.0
+offset_bottom = -18.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

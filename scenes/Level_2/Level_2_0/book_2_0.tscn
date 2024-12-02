@@ -1,0 +1,334 @@
+[gd_scene load_steps=9 format=3 uid="uid://derdw8jcxl303"]
+
+[ext_resource type="Script" path="res://scripts/Level_2/Level_2_0/book_2_0.gd" id="1_jy514"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_gb7p6"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_tusi2"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_3s4d0"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_bt1r8"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="5_qhe6j"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_8u6wc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b11ia"]
+size = Vector2(27, 37)
+
+[node name="book_2_0" type="Node2D"]
+script = ExtResource("1_jy514")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_tusi2")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -10.5)
+shape = SubResource("RectangleShape2D_b11ia")
+
+[node name="Page_1" parent="." instance=ExtResource("2_gb7p6")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 54.0
+offset_right = 234.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "               Sets
+
+A set is a collection of items.
+These items can be anything you 
+can think of.
+
+For example: you could have a set 
+of players in a football team.
+
+An \"item\" inside a set is known as
+an \"element\", so a player is an 
+element of the set of the football 
+team.
+"
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 325.0
+offset_right = 77.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "Page 1/4"
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 325.0
+offset_right = 462.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "Page 2/4"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 57.0
+offset_right = 463.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "A set is usually depicted using
+curly brackets: {} 
+
+An example of a set could be:
+{1,2,3,4}
+
+It is important to note that 
+elements inside of a set are unique
+and unordered.
+
+So if there are two sets:
+A = {1,2,3,4} and B = {2,3,1,4},
+A and B are infact the same set."
+
+[node name="Page_2" parent="." instance=ExtResource("2_gb7p6")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 60.0
+offset_right = 231.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "    Set notation and operations
+
+Here are some set notations and 
+operations using the sets: 
+A = {1,2,3,4,5}, B = {5,6,7,8},
+D = {3,4,5}:
+
+  : Element of. E.g. 1   A
+
+  : Not an element of. E.g. 6   A
+
+  : Empty set. E.g. {}. It is
+important to note that an empty set 
+is a subset of every set.
+
+  "
+
+[node name="Label9" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 60.0
+offset_right = 464.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "  : Subset. E.g. D  A. D is a 
+subset of A, as each element in set
+D is present in set A.
+
+  : Set union. Combines two sets,
+E.g. D  B = {3,4,5,6,7,8}
+
+  : Intersection. Combines all the 
+common elements. E.g. D  B = {5}
+
+\\ : Subtraction or difference.
+Remove the elements that are in one
+set, but not the other. Unlike
+union/intersection, order matters.
+E.g. D \\ B = {3,4}. B \\ D = {6,7,8}
+"
+
+[node name="Label2" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 166.0
+offset_right = 34.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∈
+"
+
+[node name="Label3" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 166.0
+offset_right = 180.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∈
+"
+
+[node name="Label4" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 198.0
+offset_right = 44.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∉
+"
+
+[node name="Label5" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 198.0
+offset_right = 222.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∉
+"
+
+[node name="Label10" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 118.0
+offset_right = 279.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∪
+"
+
+[node name="Label11" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 134.0
+offset_right = 315.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∪
+"
+
+[node name="Label12" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 165.0
+offset_right = 279.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∩
+"
+
+[node name="Label13" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 181.0
+offset_right = 417.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "∩
+"
+
+[node name="Label6" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 232.0
+offset_right = 44.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+theme_override_font_sizes/font_size = 14
+text = "∅
+"
+
+[node name="Label7" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 56.0
+offset_right = 268.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+theme_override_font_sizes/font_size = 14
+text = "⊂"
+
+[node name="Label8" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 56.0
+offset_right = 375.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+theme_override_font_sizes/font_size = 14
+text = "⊂"
+
+[node name="Label14" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 325.0
+offset_right = 77.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "Page 3/4"
+
+[node name="Label15" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 325.0
+offset_right = 462.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3s4d0")
+text = "Page 4/4"
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 177.0
+offset_top = 37.0
+offset_right = 218.0
+offset_bottom = 58.0
+theme = ExtResource("5_bt1r8")
+theme_override_fonts/font = ExtResource("5_qhe6j")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -220.0
+offset_top = 36.0
+offset_right = -184.0
+offset_bottom = 57.0
+theme = ExtResource("5_bt1r8")
+theme_override_fonts/font = ExtResource("5_qhe6j")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_8u6wc")]
+visible = false
+offset_left = -58.0
+offset_top = -43.0
+offset_right = 68.0
+offset_bottom = -20.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

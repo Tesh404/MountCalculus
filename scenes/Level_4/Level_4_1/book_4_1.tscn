@@ -1,0 +1,332 @@
+[gd_scene load_steps=9 format=3 uid="uid://cb4h5k5newcmw"]
+
+[ext_resource type="Script" path="res://scripts/Level_4/Level_4_1/book_4_1.gd" id="1_gvikg"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_mheg6"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_no2of"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_6f12j"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_1hss8"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="5_soy3k"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_17c7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uy61"]
+size = Vector2(28, 37)
+
+[node name="book_4_1" type="Node2D"]
+script = ExtResource("1_gvikg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, -24)
+texture = ExtResource("2_mheg6")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_6uy61")
+
+[node name="Page_1" parent="." instance=ExtResource("2_no2of")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 230.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Marginal Probability:
+Marginal probability is the probability of an event occuring without considering any other event. It is also known as an unconditional probability.
+
+For example: consider a fair coin (C), there are two outcomes, Heads and Tails. The probability of heads P(C = h) is 0.5 or 50%, the probability of tails P(C = t) is also 0.5 or 50%
+"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 73.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 1/8"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 456.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 2/8"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 52.0
+offset_right = 461.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "If you had two of these fair coins and tossed them both, without considering the outcome of tossing the first coin, what would the probability be that the outcome of tossing the second coin is tails?
+
+It would be 0.5, or 50%, as we completely ignore what happened to the first coin."
+autowrap_mode = 2
+
+[node name="Page_2" parent="." instance=ExtResource("2_no2of")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 230.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Joint Probability:
+Joint probability on the other hand, is the probability of two or more events occuring simultanously (LN). It is the intersection of two or more events: A   B
+
+Using the same example of a fair coin, what would the joint probability be that the outcome of tossing the first and second of the first and second coin are both heads? 
+
+To find this, you would have to "
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 126.0
+offset_right = 170.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "∩"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 52.0
+offset_right = 461.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "multiply the probabily of event A and event B, P(A) * P(B). In this case, it would be 0.5 * 0.5 = 0.25, or 25%.
+
+However, if event A depends on event B or vice versa, you would have to first find the probability of an event occuring given the event it depends on has already occured, and then multiply it by the probability of the other event occuring. So if A depended on B, then the joint probability is:
+P(A|B) * P(B)."
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 73.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 3/8"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 456.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 4/8"
+autowrap_mode = 3
+
+[node name="Page_3" parent="." instance=ExtResource("2_no2of")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 230.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Conditional Probability:
+Conditional probability is the probability that an event will occur, given that another event has occured already. E.g. The probability of event A occuring, given that B has occured aleady:
+P(A|B).
+
+The formula for conditional probablity is: 
+P(A | B) = P(A  B) / P(B)
+You may recognise that this is simply the joint probability divided by the marginal probability"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 52.0
+offset_right = 461.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Example:
+Let's say there was a box, and it contained 10 balls inside, 5 red, and 5 blue. 
+
+What would be the conditional probability that you would get two consecutive red balls from the box?
+
+Initially, the probability to get a red ball P(B = r) is 0.5, so is the probability to get a blue ball, P(B = b) = 0.5
+
+Once a red ball is taken from the "
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 222.0
+offset_right = 114.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "∩"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 73.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 5/8"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 456.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 6/8"
+autowrap_mode = 3
+
+[node name="Page_4" parent="." instance=ExtResource("2_no2of")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 230.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "box, the probability to get another red ball now becomes 0.44, or 4/9, as the box now contains one less red ball and therefore one less ball in total.
+
+We can then work out the joint probability by multiplying the probability of the first event (0.5 or 1/2) and the second event (0.44 or 4/9). 
+
+This gives us a joint probability of 0.22, or 2/9"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 57.0
+offset_right = 461.0
+offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Now, using the formula for conditional probability:
+
+(2/9) / (1/2) OR 0.22 / 0.5, we get 4/9, or 0.44.
+
+You may recognise that in this case, we did not need to work out the joint probability as we had already worked out the conditional prior to it, but this may not always be the case."
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 73.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 7/8"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 456.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6f12j")
+text = "Page 8/8"
+autowrap_mode = 3
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 178.0
+offset_top = 33.0
+offset_right = 211.0
+offset_bottom = 52.0
+theme = ExtResource("5_1hss8")
+theme_override_fonts/font = ExtResource("5_soy3k")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -218.0
+offset_top = 33.0
+offset_right = -184.0
+offset_bottom = 52.0
+theme = ExtResource("5_1hss8")
+theme_override_fonts/font = ExtResource("5_soy3k")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_17c7b")]
+visible = false
+offset_left = -57.0
+offset_top = -44.0
+offset_right = 69.0
+offset_bottom = -21.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

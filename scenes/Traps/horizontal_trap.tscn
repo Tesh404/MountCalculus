@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmk2fpa6u8my4"]
+
+[ext_resource type="Texture2D" uid="uid://dhwodtdvflth2" path="res://assets/sprites/Rocky Roads/Enemies/fireball.png" id="1_8mx85"]
+[ext_resource type="Script" path="res://scripts/Traps/horizontal_trap.gd" id="1_fjmog"]
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_wst6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo6f5"]
+atlas = ExtResource("1_8mx85")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb1md"]
+atlas = ExtResource("1_8mx85")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xgyl"]
+atlas = ExtResource("1_8mx85")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd3cx"]
+atlas = ExtResource("1_8mx85")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25jyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo6f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb1md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xgyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd3cx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5p1jh"]
+radius = 5.0
+
+[node name="horizontal_trap" type="Node2D"]
+script = ExtResource("1_fjmog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_25jyp")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_wst6h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_5p1jh")
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+target_position = Vector2(-8, 0)
+
+[node name="raycast_right" type="RayCast2D" parent="."]
+target_position = Vector2(8, 0)

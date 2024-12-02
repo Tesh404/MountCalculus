@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyu3ovx0n31nc"]
+
+[ext_resource type="Script" path="res://autoload/PauseMenu.gd" id="1_hfhrm"]
+[ext_resource type="Texture2D" uid="uid://bhk5tleorxqpl" path="res://assets/black.png" id="2_1nvhd"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="3_5w6hq"]
+[ext_resource type="PackedScene" uid="uid://des1byeptij10" path="res://scenes/answer_box.tscn" id="4_6bg1i"]
+[ext_resource type="Texture2D" uid="uid://8rj13n6ujvxj" path="res://assets/UI/01_Flat_Theme/Sprites/UI_Flat_Scrollbar_Handle_01.png" id="5_dnl8o"]
+[ext_resource type="Texture2D" uid="uid://qvg6nwxbmdxd" path="res://assets/UI/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_02a3.png" id="5_fajwg"]
+[ext_resource type="Texture2D" uid="uid://b1oeccrg20pf3" path="res://assets/UI/01_Flat_Theme/Sprites/UI_Flat_Slider.png" id="6_cowni"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="7_s4rvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_866ge"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_bottom = 8.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hfhrm")
+target_scene = "res://scenes/main_menu.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1nvhd")
+expand_mode = 1
+
+[node name="buttons" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="resume" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 71.0
+offset_right = 358.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5w6hq")
+text = "Resume"
+
+[node name="main_menu" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 127.0
+offset_right = 358.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5w6hq")
+text = "Main Menu"
+
+[node name="quit" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 242.0
+offset_top = 161.0
+offset_right = 358.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_5w6hq")
+text = "Quit Game"
+
+[node name="Sprite2D3" parent="buttons" instance=ExtResource("4_6bg1i")]
+position = Vector2(288, 253.706)
+scale = Vector2(1.5625, 1.35663)
+texture = ExtResource("5_fajwg")
+
+[node name="Sprite2D2" parent="buttons" instance=ExtResource("4_6bg1i")]
+position = Vector2(320, 264.176)
+scale = Vector2(3.625, 2.55151)
+texture = ExtResource("6_cowni")
+
+[node name="HSlider" type="HSlider" parent="buttons"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 243.0
+offset_right = 367.0
+offset_bottom = 275.0
+theme_override_constants/center_grabber = -1
+theme_override_constants/grabber_offset = 4
+theme_override_icons/grabber = ExtResource("5_dnl8o")
+theme_override_icons/grabber_highlight = ExtResource("5_dnl8o")
+theme_override_styles/slider = SubResource("StyleBoxFlat_866ge")
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="Label" type="Label" parent="buttons"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 239.0
+offset_right = 311.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_s4rvt")
+text = "Volume"
+
+[connection signal="pressed" from="buttons/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="buttons/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="buttons/HSlider" to="." method="_on_h_slider_value_changed"]

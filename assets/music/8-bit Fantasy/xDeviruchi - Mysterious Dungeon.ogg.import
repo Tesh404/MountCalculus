@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ba38qsb8qna14"
+path="res://.godot/imported/xDeviruchi - Mysterious Dungeon.ogg-3358b8ee8404aaf460354d64610213df.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/8-bit Fantasy/xDeviruchi - Mysterious Dungeon.ogg"
+dest_files=["res://.godot/imported/xDeviruchi - Mysterious Dungeon.ogg-3358b8ee8404aaf460354d64610213df.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

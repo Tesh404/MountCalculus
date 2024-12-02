@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci8j04f8w4jn2"]
+
+[ext_resource type="Script" path="res://scripts/Level_1/Level_1_0/path_book_1_0.gd" id="1_cktse"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_udbcr"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_asf3c"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="5_705uk"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_aiu6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72pif"]
+size = Vector2(32, 59)
+
+[node name="path_book_1_0" type="Node2D"]
+script = ExtResource("1_cktse")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_udbcr")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -20.5)
+shape = SubResource("RectangleShape2D_72pif")
+
+[node name="Page_1" parent="." instance=ExtResource("5_705uk")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 57.0
+offset_right = 222.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_asf3c")
+text = "             Question
+
+
+f(x) = 4x² + 2 - 1
+
+
+If x is 2..."
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 56.0
+offset_right = 453.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_asf3c")
+text = "              Pathway
+
+
+Choose the upper path if you believe the output is 17.
+
+
+Choose the lower path if you believe the output is 19."
+autowrap_mode = 2
+
+[node name="Interact Label" parent="." instance=ExtResource("5_aiu6n")]
+visible = false
+offset_left = -60.0
+offset_top = -67.0
+offset_right = 66.0
+offset_bottom = -44.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

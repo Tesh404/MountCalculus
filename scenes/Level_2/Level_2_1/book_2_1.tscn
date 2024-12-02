@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwj0ve5yeg3fh"]
+
+[ext_resource type="Script" path="res://scripts/Level_2/Level_2_1/book_2_1.gd" id="1_420wn"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_h1ejc"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_h3obg"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_22hqa"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_sbwj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdq7"]
+size = Vector2(27, 38)
+
+[node name="book_2_1" type="Node2D"]
+script = ExtResource("1_420wn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_h3obg")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -11)
+shape = SubResource("RectangleShape2D_6wdq7")
+
+[node name="Page_1" parent="." instance=ExtResource("2_h1ejc")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 59.0
+offset_right = 227.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_22hqa")
+text = "      Special Numerical Sets
+
+There also exists special 
+numerical sets:
+
+R = Set of all real and continous
+numbers. E.g. {1, -3, 4.5, 0}
+
+N = Set of all natural numbers,
+this does not include zero, and is 
+positive. E.g. {1,2,3,4,5}
+
+Z = Set of integers. These can be
+positive, negative or 0.
+E.g. {-4,-2,0,2,4}"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 58.0
+offset_right = 455.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_22hqa")
+text = "Q = Set of all fractional/ rational
+ numbers. E.g. {7, 2.5, 3/4, 0.5}
+
+C = Set of all complex numbers.
+E.g. {3 + 5i, 5 + 6i, 7 + 8i}"
+
+[node name="Interact Label" parent="." instance=ExtResource("5_sbwj1")]
+visible = false
+offset_left = -55.0
+offset_top = -44.0
+offset_right = 71.0
+offset_bottom = -21.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

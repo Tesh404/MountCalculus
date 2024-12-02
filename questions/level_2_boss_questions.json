@@ -1,0 +1,52 @@
+[
+	{
+		"question": "A = {3,4,5,2}, B = {2,3,4,5}. Are these both the same set?",
+		"options": [ "Yes", "No"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {2,3,4}, B = {3,4,5,6}. Is A ⊂ B?",
+		"options": [ "Yes", "No"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "A = {5,7,8,11}. Is 9 ∉ A?",
+		"options": [ "Yes", "No"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {7,8,9}, B = {9,10,11}. What is A ∪ B?",
+		"options": [ "{7,8,9,10,11}", "{7,8,10,11}", "{7,8,9,9,10,11}", "{7,8,9}"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {3,8,10}, B = {5,3,10}. What is A ∩ B?",
+		"options": [ "{3,8,5,10}", "{3,5,8,10}", "{3,10}", "{3,3,5,8,10,10}"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "The set R is the set of all rational numbers",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "∅ ⊂ Z",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "Z is the set of integers",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "Elements in a set are unique and unordered",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {a,b,c,d}, B = {c,d,e,f,g}. What is A ∩ B?",
+		"options": [ "{a,b,c,d,e,f,g}", "{c,d,e,f,g}", "{c,d}", "{a,b,e,f,g}"],
+		"correctOptionIndex": 2
+	}
+]

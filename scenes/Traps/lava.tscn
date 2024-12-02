@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://bd74xb0rpqwha"]
+
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_6bnu5"]
+[ext_resource type="Texture2D" uid="uid://6nu1jaxrmhth" path="res://assets/sprites/LavaCavesPackv1/Decorations/LavaAnimation_Top.png" id="2_agapj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boo2u"]
+atlas = ExtResource("2_agapj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynk7k"]
+atlas = ExtResource("2_agapj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah7hd"]
+atlas = ExtResource("2_agapj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0u3s"]
+atlas = ExtResource("2_agapj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkaoi"]
+atlas = ExtResource("2_agapj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjre8"]
+atlas = ExtResource("2_agapj")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3aiy"]
+atlas = ExtResource("2_agapj")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bqc1"]
+atlas = ExtResource("2_agapj")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6stn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boo2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynk7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah7hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0u3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkaoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjre8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3aiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bqc1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc2f1"]
+size = Vector2(16, 11)
+
+[node name="lava" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6stn")
+autoplay = "default"
+frame_progress = 0.392868
+
+[node name="Killzone" parent="." instance=ExtResource("2_6bnu5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_nc2f1")

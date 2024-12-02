@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cp20167l8c6ao"]
+
+[ext_resource type="Script" path="res://scripts/Enemies/bird.gd" id="1_l878i"]
+[ext_resource type="Texture2D" uid="uid://ct5njf2vxbi8s" path="res://assets/sprites/Rocky Roads/Enemies/bird.png" id="1_tugi2"]
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_071in"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf5hf"]
+atlas = ExtResource("1_tugi2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhhcq"]
+atlas = ExtResource("1_tugi2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ou31"]
+atlas = ExtResource("1_tugi2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gamj"]
+atlas = ExtResource("1_tugi2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge8de"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf5hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhhcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ou31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gamj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_me8lq"]
+radius = 9.0
+
+[node name="Bird" type="Node2D"]
+script = ExtResource("1_l878i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ge8de")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_071in")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_me8lq")
+
+[node name="raycast_right" type="RayCast2D" parent="."]
+target_position = Vector2(12, 0)
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+target_position = Vector2(-12, 0)

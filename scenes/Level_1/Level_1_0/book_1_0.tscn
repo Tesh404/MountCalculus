@@ -1,0 +1,208 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxn1m06jbpeeo"]
+
+[ext_resource type="Script" path="res://scripts/Level_1/Level_1_0/book_1_0_1.gd" id="1_fo151"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_1x0xy"]
+[ext_resource type="FontFile" uid="uid://cqh1je2vf7jl4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_am5tq"]
+[ext_resource type="Texture2D" uid="uid://5vbv6coougkt" path="res://assets/sprites/Kasaya's Frames/Book/Item or quest book1.png" id="3_ai33v"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_urw5f"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_6wsxn"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_fygd2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f0ne"]
+size = Vector2(30, 36)
+
+[node name="book_1_0" type="Node2D"]
+script = ExtResource("1_fo151")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_1x0xy")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_4f0ne")
+
+[node name="Page_1" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_ai33v")
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 55.0
+offset_right = 235.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "              Functions
+What are functions? 
+Functions are like machines; you
+put something into them (input), it
+processes it, and you get something 
+back (output).
+
+Imagine you had a smoothie maker,
+and you put a banana in it.
+Assuming the machine works, it would
+output some banana smoothie.
+
+A function is typically denoted by
+\"f\", and the input is typically 
+denoted by \"x\"."
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 324.0
+offset_right = 75.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "Page 1/4"
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 325.0
+offset_right = 457.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "Page 2/4"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 56.0
+offset_right = 467.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "An example of a simple function is:
+f(x) = x + 2. This simply means that
+the function takes the input value 
+x, and adds 2 to it.
+
+So, here, f(5) would output 7, as 
+5 + 2 = 7.  
+
+Similarly, f(7) would output 9, as 
+7 + 2 = 9."
+
+[node name="Page_2" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = 86.0
+texture = ExtResource("3_ai33v")
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 54.0
+offset_right = 161.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "However, functions do not have to
+be limited to \"f\" or \"x\".
+
+
+There are many letters that can be
+used to denote functions.
+
+Here are just a few examples that 
+are still valid functions:
+- g(x) = x + 4
+- t(h) = h - 7
+- g(h) = h / 9"
+
+[node name="Label2" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 56.0
+offset_right = 466.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "Functions can also be more complex,
+and contain more than just one
+expression, including exponential
+expressions.
+
+For example:
+f(x) = 3x + x²
+Here, say x was 3, the function 
+would output the answer as 18, as
+3 * 3 + 3 * 3 = 18.
+
+f(x) = 2x² - 4x + 5
+Here, if x was 3, the function 
+would output 11, as 18 - 12 + 5 = 11"
+
+[node name="Label4" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 324.0
+offset_right = 75.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "Page 3/4"
+
+[node name="Label5" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 325.0
+offset_right = 456.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_urw5f")
+text = "Page 4/4"
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 178.0
+offset_top = 40.0
+offset_right = 217.0
+offset_bottom = 56.0
+theme = ExtResource("5_6wsxn")
+theme_override_fonts/font = ExtResource("2_am5tq")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -221.0
+offset_top = 39.0
+offset_right = -181.0
+offset_bottom = 55.0
+theme = ExtResource("5_6wsxn")
+theme_override_fonts/font = ExtResource("2_am5tq")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_fygd2")]
+visible = false
+offset_left = -63.0
+offset_top = -46.0
+offset_right = 63.0
+offset_bottom = -23.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

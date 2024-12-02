@@ -1,0 +1,78 @@
+[
+	{
+		"question": "g(x) = x⁶, what is g(3)?",
+		"options": [ "81", "243", "729", "18"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "f(x) = 3x³ + 10, what is f(5)?",
+		"options": [ "135", "125", "385", "355"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "f(x) = 6x + 3 and g(x) = 8x - 4. What is the value of f(g(5))?",
+		"options": [ "219", "216", "39", "36"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {5,11,15}, B = {6,12,13}. What is A ∩ B?",
+		"options": [ "{5,11,15,6,12,13}", "{5,11,15}", "{6,12,13}", "{}"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "A = {5,6,7}, B = {5,6,7,8,9}. Is A ⊂ B?",
+		"options": [ "Yes", "No"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A = {3,4,6,7,9}, B = {9,15,16,19}. What is B ∪ A?",
+		"options": [ "{3,4,6,7,9,9,15,16,19}", "{9,15,16,19,3,4,6,7,9}", "{3,4,6,7,9,15,16,19}", "{3,4,6,7,15,16,19}"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "∅  ⊂  R",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "What is d/dx[x¹¹]?",
+		"options": [ "11", "10x¹¹", "11x¹¹", "11x¹⁰"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "f(x) = 4x³ + 5x, what is f'(x)?",
+		"options": [ "8x + 5", "12x² + 5", "12x³ + 5x", "12x + 5x"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "f(x) = x⁴, g(x) = 2x - 9, what is d/dx[f(g(x))]?",
+		"options": [ "4(2x - 9)", "8(2x - 9)³", "8(2x - 9)³ * 2", "4(2x - 9) * 2"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "f(x) = 2x² + 3, g(x) = 10x + 7, what is d/dx[f*g]?",
+		"options": [ "(4x)(10x + 7) + (2x² + 3)(10)", "(8x)(17x + 7) + (2x + 3)(17)", "(4x)(10x + 7) + (2x² + 3)", "(4x²)(10x + 7) + (2x + 3)(10)"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A biased coin has the probability of gettings tails at 25%, what is the probability of getting heads?",
+		"options": [ "25%", "35%", "50%", "75%"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "A box contains 5 oranges and 3 lemons. What is the probability that you get two lemons consecutively?",
+		"options": [ "37.5%", "14.06%", "10.71%", "42.85%"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "A biased coin has the probability of gettings heads at 45%, what is the probability of getting heads twice?",
+		"options": [ "90%", "20.25%", "55%", "45%"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "A biased coin has the probability of gettings tails at 35%, what is the probability of getting heads first AND tails second?",
+		"options": [ "65%", "17.5%", "22.75%", "50%"],
+		"correctOptionIndex": 2
+	}
+
+]

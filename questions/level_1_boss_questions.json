@@ -1,0 +1,52 @@
+[
+	{
+		"question": "If f(x) = x³, what is f(3)?",
+		"options": [ "6", "9", "18", "27"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "If f(x) = x², what is f(5)?",
+		"options": [ "15", "50", "25", "30"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "g(x) = x⁵, what is g(2)?",
+		"options": [ "32", "10", "20", "4"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "f(x) = x + 5, what is f(100)?",
+		"options": [ "5", "95", "500", "105"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "If f(x) = 2x² + 5, what is f(4)?",
+		"options": [ "21", "13", "37", "28"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "If g(x) = 5x² - 8, what is g(9)?",
+		"options": [ "82", "397", "292", "32"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "If f(x) = 3x² + x - 5, what is f(4)?",
+		"options": [ "44", "23", "21", "47"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "If f(x) = 5x² + 5, and g(x) = x + 3, what is f ∘ g?",
+		"options": [ "5x² + 30x + 30", "25x² + 30x + 30", "5x² + 50x + 50", "5x² + 30x + 50"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "f(x) = 4x - 4 and g(x) = 2x + 5. What is the value of f(g(6))?",
+		"options": [ "17", "63", "64", "24"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "f(x) = 4x - 6 and g(x) = 3x - 2. What is the value of f(g(5))?",
+		"options": [ "46", "56", "44", "40"],
+		"correctOptionIndex": 0
+	}
+]

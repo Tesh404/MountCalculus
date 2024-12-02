@@ -1,0 +1,134 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2m5r58fnj1js"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ilgwd"]
+[ext_resource type="AudioStream" uid="uid://dwruqgq54j6he" path="res://assets/music/8-bit Fantasy/xDeviruchi - Title Theme (Loop).ogg" id="2_1weew"]
+[ext_resource type="Texture2D" uid="uid://bpy7eejksepmw" path="res://assets/Battleground/spr_battlebacks_index.png" id="2_u1o11"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="3_in35e"]
+[ext_resource type="PackedScene" uid="uid://coq2du4cbx8hg" path="res://scenes/question_box.tscn" id="4_6ly3r"]
+[ext_resource type="FontFile" uid="uid://cqh1je2vf7jl4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_xocoi"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="5_ggfph"]
+
+[node name="main_menu" type="Node"]
+script = ExtResource("1_ilgwd")
+audio = ExtResource("2_1weew")
+target_scene = "res://scenes/Level_1/Level_1_0/main.tscn"
+tutorial_scene = "res://scenes/tutorial.tscn"
+credits_scene = "res://addons/maaacks_credits_scene/examples/scenes/EndCredits/EndCredits.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 3.27273)
+texture = ExtResource("2_u1o11")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 220, 256, 110)
+
+[node name="main_scene" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="New Game" type="Button" parent="main_scene"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 103.0
+offset_right = 371.0
+offset_bottom = 142.0
+theme = ExtResource("3_in35e")
+text = "New Game"
+
+[node name="Continue" type="Button" parent="main_scene"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 148.0
+offset_right = 371.0
+offset_bottom = 188.0
+theme = ExtResource("3_in35e")
+text = "Continue"
+
+[node name="Tutorial" type="Button" parent="main_scene"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 194.0
+offset_right = 371.0
+offset_bottom = 234.0
+theme = ExtResource("3_in35e")
+text = "Tutorial"
+
+[node name="Quit" type="Button" parent="main_scene"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 284.0
+offset_right = 371.0
+offset_bottom = 323.0
+theme = ExtResource("3_in35e")
+text = "Quit"
+
+[node name="Credits" type="Button" parent="main_scene"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 239.0
+offset_right = 371.0
+offset_bottom = 280.0
+theme = ExtResource("3_in35e")
+text = "Credits"
+
+[node name="Label" type="Label" parent="main_scene"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 31.0
+offset_right = 636.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xocoi")
+theme_override_font_sizes/font_size = 48
+text = "Mount Calculus"
+
+[node name="Confirm_scene" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D3" parent="Confirm_scene" instance=ExtResource("4_6ly3r")]
+position = Vector2(330.443, 58.7443)
+scale = Vector2(9.48617, 4.07848)
+
+[node name="Label" type="Label" parent="Confirm_scene"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 38.0
+offset_right = 631.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ggfph")
+theme_override_font_sizes/font_size = 32
+text = "Warning! Starting a new game will delete your previous saves if you have any. Continue?"
+autowrap_mode = 3
+
+[node name="Back" type="Button" parent="Confirm_scene"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 187.0
+offset_right = 211.0
+offset_bottom = 225.0
+theme = ExtResource("3_in35e")
+text = "Back"
+
+[node name="Yes" type="Button" parent="Confirm_scene"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 187.0
+offset_right = 543.0
+offset_bottom = 225.0
+theme = ExtResource("3_in35e")
+text = "Yes"
+
+[connection signal="pressed" from="main_scene/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main_scene/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="main_scene/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="main_scene/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main_scene/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Confirm_scene/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Confirm_scene/Yes" to="." method="_on_yes_pressed"]

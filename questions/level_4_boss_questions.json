@@ -1,0 +1,53 @@
+[
+	{
+		"question": "The probability of an event to occur can never be zero.",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "Marginal probability takes into account other events.",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "Joint probability is the probability of two or more events occuring simultaneously.",
+		"options": [ "True", "False"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A biased coin has the probability of gettings heads at 65%, what is the probability of getting tails?",
+		"options": [ "65%", "30%", "42.5%", "35%"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "A biased coin has the probability of gettings tails at 75%, what is the probability of getting heads?",
+		"options": [ "25%", "35%", "50%", "75%"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "Using a fair coin. What is the probability of getting heads first AND tails second",
+		"options": [ "25%", "50%", "100%", "12.5%"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "A container has 5 sticks and 10 stones. If you took out a stone first, what is the probability of picking out a stone second?",
+		"options": [ "66.6%", "60%", "64.29%", "33.3%"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "A basket contains 3 apples and 2 bananas. What is the probability that you get two apples consecutively?",
+		"options": [ "40%", "60%", "30%", "50%"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "A box contains 6 spheres and 5 cubes, if you initially picked a sphere, what is the probability that you pick a cube second?",
+		"options": [ "25%", "50%", "44%", "30%"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "A container has 3 red balls and 3 green balls, what is the joint probability that you get a red ball first AND a green ball second?",
+		"options": [ "30%", "60%", "25%", "50%"],
+		"correctOptionIndex": 0
+	}
+
+]

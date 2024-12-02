@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dom1ot1cmrpg"]
+
+[ext_resource type="Script" path="res://scripts/player_health.gd" id="1_3drgo"]
+[ext_resource type="PackedScene" uid="uid://coq2du4cbx8hg" path="res://scenes/question_box.tscn" id="1_nvywn"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="2_vfbmv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3h4a"]
+bg_color = Color(0.329158, 0.329158, 0.329158, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb3e7"]
+bg_color = Color(0.0980392, 0.713726, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Health" type="Node2D"]
+script = ExtResource("1_3drgo")
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_nvywn")]
+position = Vector2(81.8331, 46)
+scale = Vector2(1.94271, 1.5)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -28.189
+offset_top = -10.7397
+offset_right = -13.189
+offset_bottom = 3.2603
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vfbmv")
+theme_override_font_sizes/font_size = 16
+text = "HP"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 24.0
+offset_top = 50.0
+offset_right = 140.0
+offset_bottom = 62.0
+theme_override_styles/background = SubResource("StyleBoxFlat_k3h4a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hb3e7")
+max_value = 120.0
+value = 118.0
+show_percentage = false

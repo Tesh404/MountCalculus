@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://wfa4dhhkx82"]
+
+[ext_resource type="Texture2D" uid="uid://cugikhxdlv1hj" path="res://assets/sprites/Bosses/Cyclops v2.0/Sprite/DEATH.png" id="1_6cha1"]
+[ext_resource type="Texture2D" uid="uid://dkjalrkhp7bjl" path="res://assets/sprites/Bosses/Cyclops v2.0/Sprite/IDLE.png" id="1_f6tr6"]
+[ext_resource type="Script" path="res://scripts/Bosses/cyclops_boss.gd" id="1_wscc1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pab76"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(0, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc4m5"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(158, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4hog"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(316, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilbrm"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(474, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt0vl"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(632, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b71id"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(790, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfa6j"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(948, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_747r2"]
+atlas = ExtResource("1_6cha1")
+region = Rect2(1106, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ett"]
+atlas = ExtResource("1_f6tr6")
+region = Rect2(0, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ce7y"]
+atlas = ExtResource("1_f6tr6")
+region = Rect2(158, 0, 158, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkfqp"]
+atlas = ExtResource("1_f6tr6")
+region = Rect2(316, 0, 158, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_weusu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pab76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc4m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4hog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilbrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt0vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b71id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfa6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_747r2")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ett")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ce7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkfqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="CyclopsBoss" type="Node2D"]
+script = ExtResource("1_wscc1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_weusu")
+autoplay = "default"

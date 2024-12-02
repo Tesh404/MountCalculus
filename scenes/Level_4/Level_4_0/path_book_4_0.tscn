@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbi7allpwri5x"]
+
+[ext_resource type="Script" path="res://scripts/Level_4/Level_4_0/path_book_4_0.gd" id="1_2c025"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_dtlnk"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_xb4xk"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_ht3x2"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_miwit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jyi"]
+size = Vector2(36, 60)
+
+[node name="path_book_4_0" type="Node2D"]
+script = ExtResource("1_2c025")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_dtlnk")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_k0jyi")
+
+[node name="Page_1" parent="." instance=ExtResource("2_xb4xk")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 54.0
+offset_right = 218.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ht3x2")
+text = "             Question
+
+
+
+
+
+The probability of an event occuring can be: positive, negative, or zero."
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 50.0
+offset_right = 449.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ht3x2")
+text = "
+
+
+
+Take the upper path if you believe this to be TRUE.
+
+
+
+Take the lower path if you belive this to be FALSE."
+autowrap_mode = 3
+
+[node name="Interact Label" parent="." instance=ExtResource("5_miwit")]
+visible = false
+offset_left = -56.0
+offset_top = -66.0
+offset_right = 70.0
+offset_bottom = -43.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

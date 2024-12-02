@@ -1,0 +1,643 @@
+[gd_scene load_steps=9 format=3 uid="uid://by75hcmeqkig3"]
+
+[ext_resource type="Script" path="res://scripts/Level_3/Level_3_0/book_3_0.gd" id="1_ab2ih"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_n331g"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_nkl0k"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_0kyn4"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_cg8r6"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="5_wvwkd"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_voue1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71cub"]
+size = Vector2(29, 36)
+
+[node name="book_3_0" type="Node2D"]
+script = ExtResource("1_ab2ih")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, -24)
+texture = ExtResource("2_n331g")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -10)
+shape = SubResource("RectangleShape2D_71cub")
+
+[node name="Page_1" parent="." instance=ExtResource("2_nkl0k")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 54.0
+offset_right = 235.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "            Derivatives
+A derivative is essentially a 
+function which provides you with 
+the slope at a given point in the x 
+axis of a graph.
+
+This means that the derivative of a
+function helps us find its 'rate of 
+change'. 
+
+This 'rate of change' is measured 
+with respect to a variable. For
+example, in a graph, the change in
+the y axis can be measured with 
+respect to x. 
+
+
+"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 54.0
+offset_right = 477.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "This can be represented by: dy/dx.
+More generally, a derivative can 
+also be denoted by: d/dx.
+
+Another common notation is f'(x). 
+This is spoken as: \"f prime of x\". 
+This is commonly used when finding
+the derivative of a function. This
+is the same as d/dx f(x). This is
+also known as differentiating f(x). 
+
+So, how can we find the derivative?
+There are several rules that can 
+help us find the derivative of a
+function. "
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 78.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 1/10"
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 321.0
+offset_right = 455.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 2/10"
+
+[node name="Page_2" parent="." instance=ExtResource("2_nkl0k")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 228.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "      Some rules of derivatives
+
+The Constant Rule: The constant 
+rule states that the derivative of
+a constant is zero.
+
+For example, the derivative of f(2)
+or f'(2) = 0. 
+
+This is because the derivative is 
+trying to measure the rate 
+of change, and constants do not
+change.
+
+"
+
+[node name="Label2" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 52.0
+offset_right = 457.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "The Power Rule: The power rule
+helps us to deal with exponents.
+For example, like f(x²).
+
+The formula for the power rule is:
+
+
+So, using this formula, we can 
+calculate the derivative of:
+         = 2x
+ 
+         = 5x⁴
+
+         = 7x⁶
+
+
+"
+
+[node name="Label3" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 142.0
+offset_right = 393.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "d/dx(xⁿ) = nxⁿ⁻¹"
+
+[node name="Label4" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 199.0
+offset_right = 306.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "d/dx(x²)"
+
+[node name="Label5" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 238.0
+offset_right = 308.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "d/dx(x⁵)"
+
+[node name="Label6" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 280.0
+offset_right = 306.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "d/dx(x⁷)"
+
+[node name="Label7" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 78.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 3/10"
+
+[node name="Label8" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 321.0
+offset_right = 455.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 4/10"
+
+[node name="Page_3" parent="." instance=ExtResource("2_nkl0k")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 228.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "The Constant Multiple Rule:
+The constant multiple rule helps us
+deal with finding the derivative 
+when multiplying constants with a
+function.
+
+The formula for the constant multiple rule is:
+d/dx[c * f(x)] = c * d/dx[f(x)]
+
+Using this formula, we can find:
+d/dx[5x⁵]:
+In this case, 5 is the constant, and x⁵ is the function.
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 54.0
+offset_right = 460.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "First, find the derivative of the function f(x). In this case the derivative of   is    .
+
+The next step is to multiply the constant with the derivative of the function: 5    
+
+This ultimately gives us the answer: "
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 79.0
+offset_right = 345.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "x⁵"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 79.0
+offset_right = 377.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "5x⁴"
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 143.0
+offset_right = 353.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "(5x⁴)"
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 191.0
+offset_right = 310.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "25x⁴"
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 78.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 5/10"
+
+[node name="Label8" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 321.0
+offset_right = 455.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 6/10"
+
+[node name="Page_4" parent="." instance=ExtResource("2_nkl0k")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 228.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "The Product Rule: The product rule 
+helps us deal with finding the 
+derivative when multiplying 
+functions. For example: d/dx[f*g]
+
+The formula for the product rule is:
+d/dx[f(x) * g(x)] = f'(x)g(x) + f(x)g'(x) 
+more simply: d/dx[f*g] = f'g + fg'
+
+Using this formula, we can find 
+d/dx[f*g] using the example where:
+
+
+"
+autowrap_mode = 3
+
+[node name="Label16" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 54.0
+offset_right = 460.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "First find the derivative of each
+function:
+   
+           
+Applying the formuala, we get:
+
+
+You may be asked to simplify it further, however for this context we will leave it here.
+
+"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 263.0
+offset_right = 95.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "f = 7x + 9x³"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 270.0
+offset_right = 183.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "and g = 6x - 5"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 79.0
+offset_right = 331.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "f' = 7 + 27x²"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 131.0
+offset_right = 322.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "(7 + 27x²)"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 138.0
+offset_right = 358.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "(6x - 5)"
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 131.0
+offset_right = 432.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "+ (7x + 9x³)"
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 138.0
+offset_right = 453.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "* 6"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 100.0
+offset_right = 337.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "g' = 6"
+autowrap_mode = 3
+
+[node name="Label10" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 78.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 7/10"
+
+[node name="Label11" type="Label" parent="Page_4"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 321.0
+offset_right = 455.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 8/10"
+
+[node name="Page_5" parent="." instance=ExtResource("2_nkl0k")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label10" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 58.0
+offset_right = 233.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "The Quotient Rule: The formula for the quotient rule is:
+
+
+Using this formula, we can find d/dx[f/g] using the example where:
+
+
+
+First, find the derivative of each function:
+f' = 2x
+g' = 4
+
+"
+autowrap_mode = 3
+
+[node name="Label16" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 54.0
+offset_right = 462.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "After applying the formula, we get:
+[(4x - 2)(2x) -        (4)/       ]
+"
+autowrap_mode = 3
+
+[node name="Label11" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 90.0
+offset_right = 214.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "d/dx[f/g] = [gf' - fg' /  g²]"
+autowrap_mode = 3
+
+[node name="Label12" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 152.0
+offset_right = 83.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "f = x² + 9"
+autowrap_mode = 3
+
+[node name="Label14" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 63.0
+offset_right = 406.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "(x² + 9)"
+autowrap_mode = 3
+
+[node name="Label13" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 176.0
+offset_right = 80.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "g = 4x - 2"
+autowrap_mode = 3
+
+[node name="Label15" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 63.0
+offset_right = 465.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "(4x-2)²"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 78.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 9/10"
+
+[node name="Label6" type="Label" parent="Page_5"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 322.0
+offset_right = 455.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kyn4")
+text = "Page 10/10"
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 179.0
+offset_top = 35.0
+offset_right = 214.0
+offset_bottom = 53.0
+theme = ExtResource("5_cg8r6")
+theme_override_fonts/font = ExtResource("5_wvwkd")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -221.0
+offset_top = 35.0
+offset_right = -185.0
+offset_bottom = 53.0
+theme = ExtResource("5_cg8r6")
+theme_override_fonts/font = ExtResource("5_wvwkd")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_voue1")]
+visible = false
+offset_left = -56.0
+offset_top = -44.0
+offset_right = 70.0
+offset_bottom = -21.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

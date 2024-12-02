@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch2gsdvgijpyr"]
+
+[ext_resource type="Texture2D" uid="uid://60wsrp208s0i" path="res://assets/sprites/LavaCavesPackv1/Tileset/Lava_tileset.png" id="1_w3kb5"]
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_m4dkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtnty"]
+size = Vector2(12, 13)
+
+[node name="lava_spikes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w3kb5")
+region_enabled = true
+region_rect = Rect2(32, 128, 16, 16)
+
+[node name="Killzone" parent="." instance=ExtResource("2_m4dkt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_qtnty")

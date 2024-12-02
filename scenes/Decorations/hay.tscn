@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btia5k1rwf7ee"]
+
+[ext_resource type="Texture2D" uid="uid://dypwfnv8m6ymm" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/Hay.png" id="1_xyx5t"]
+
+[node name="hay" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xyx5t")

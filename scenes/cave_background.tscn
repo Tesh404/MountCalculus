@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://4h3ayp7yj3fq"]
+
+[ext_resource type="Texture2D" uid="uid://d0npc45wtio5g" path="res://assets/sprites/LavaCavesPackv1/Background/BG_far.png" id="1_laval"]
+[ext_resource type="Texture2D" uid="uid://p8alknmuwpe0" path="res://assets/sprites/LavaCavesPackv1/Background/BG_near.png" id="2_670x2"]
+
+[node name="CaveBackground" type="Node"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2(0, 384)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_laval")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_670x2")
+centered = false

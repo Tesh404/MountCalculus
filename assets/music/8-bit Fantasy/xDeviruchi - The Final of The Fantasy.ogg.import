@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmhb6kq74aqtj"
+path="res://.godot/imported/xDeviruchi - The Final of The Fantasy.ogg-2a48d656bb371ec7d8fabfd5f8a1b8f2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/8-bit Fantasy/xDeviruchi - The Final of The Fantasy.ogg"
+dest_files=["res://.godot/imported/xDeviruchi - The Final of The Fantasy.ogg-2a48d656bb371ec7d8fabfd5f8a1b8f2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

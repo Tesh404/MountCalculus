@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca1q38nkpfgai"]
+
+[ext_resource type="Texture2D" uid="uid://dkphvyiw7fkju" path="res://assets/Tileset/WinterPackNAv2/Decorations/DecorsSmall.png" id="1_3t7x3"]
+
+[node name="tree_trunk" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, -5)
+texture = ExtResource("1_3t7x3")
+region_enabled = true
+region_rect = Rect2(80, 30, 96, 34)

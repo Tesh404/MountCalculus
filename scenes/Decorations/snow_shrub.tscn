@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bswmixvd2shu8"]
+
+[ext_resource type="Texture2D" uid="uid://dkphvyiw7fkju" path="res://assets/Tileset/WinterPackNAv2/Decorations/DecorsSmall.png" id="1_n66kw"]
+
+[node name="snow_shrub" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n66kw")
+region_enabled = true
+region_rect = Rect2(0, 32, 64, 32)

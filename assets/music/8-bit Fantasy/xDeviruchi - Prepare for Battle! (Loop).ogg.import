@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dadh8nguyg3o2"
+path="res://.godot/imported/xDeviruchi - Prepare for Battle! (Loop).ogg-89975166f2b467fc3919f789d82e6a45.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/8-bit Fantasy/xDeviruchi - Prepare for Battle! (Loop).ogg"
+dest_files=["res://.godot/imported/xDeviruchi - Prepare for Battle! (Loop).ogg-89975166f2b467fc3919f789d82e6a45.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

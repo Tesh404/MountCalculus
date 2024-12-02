@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d02dru1dgiccx"]
+
+[ext_resource type="Texture2D" uid="uid://b7j03fnybdiyq" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/RuinedBrickFormation.png" id="1_gsidv"]
+
+[node name="RuinedBrick_flip" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gsidv")
+flip_h = true

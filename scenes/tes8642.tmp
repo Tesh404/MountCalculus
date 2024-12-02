@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6jbo2bg6ch1n"]
+
+[ext_resource type="Script" path="res://scripts/test_book.gd" id="1_47o8m"]
+[ext_resource type="Texture2D" uid="uid://5vbv6coougkt" path="res://assets/sprites/Kasaya's Frames/Book/Item or quest book1.png" id="1_rh35j"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="3_3mv71"]
+[ext_resource type="Texture2D" uid="uid://d0xl3a6a5dea4" path="res://assets/sprites/Rocky Roads/Deco/tree_trunk.png" id="3_q3tev"]
+[ext_resource type="Texture2D" uid="uid://rlndca8ynt3b" path="res://assets/sprites/Kasaya's Frames/Book/Item or quest book2.png" id="5_ibh28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3nn0"]
+size = Vector2(16, 11)
+
+[node name="test_book" type="Node2D"]
+script = ExtResource("1_47o8m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -162.0
+offset_right = 112.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rh35j")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 27.0
+offset_right = 102.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("3_3mv71")
+theme_override_font_sizes/font_size = 8
+text = "Functions:
+
+Functions are 
+very important
+in any mathema-
+tical topic"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("3_q3tev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_i3nn0")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_left = -112.0
+offset_top = -162.0
+offset_right = 112.0
+offset_bottom = -2.0
+texture = ExtResource("5_ibh28")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 55.0
+offset_top = -43.0
+offset_right = 100.0
+offset_bottom = -12.0
+text = "Next"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

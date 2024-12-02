@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://b68jh53a6egqd"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_sbiad"]
+[ext_resource type="Texture2D" uid="uid://dlb56yrgvtuml" path="res://assets/sprites/Dimensional_Portal.png" id="2_frugy"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="3_d5724"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_146f4"]
+atlas = ExtResource("2_frugy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074uw"]
+atlas = ExtResource("2_frugy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgu0j"]
+atlas = ExtResource("2_frugy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20vw6"]
+atlas = ExtResource("2_frugy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blhhu"]
+atlas = ExtResource("2_frugy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ck1v"]
+atlas = ExtResource("2_frugy")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftwlq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_146f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_074uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgu0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20vw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blhhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ck1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mji5g"]
+size = Vector2(33, 65)
+
+[node name="Door" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_sbiad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ftwlq")
+autoplay = "default"
+frame_progress = 0.326592
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_mji5g")
+
+[node name="Interact Label" parent="." instance=ExtResource("3_d5724")]
+visible = false
+offset_left = -56.0
+offset_top = -33.0
+offset_right = 70.0
+offset_bottom = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

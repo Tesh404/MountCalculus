@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjqmqpje4h6yg"]
+
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_10u5o"]
+[ext_resource type="Texture2D" uid="uid://c4y0vat3vllw1" path="res://assets/Tileset/WinterPackNAv2/Tileset/WinterTileset.png" id="2_ahuwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bw8t"]
+size = Vector2(16, 10)
+
+[node name="spikes" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0.25, 0)
+scale = Vector2(1.03333, 1)
+texture = ExtResource("2_ahuwr")
+region_enabled = true
+region_rect = Rect2(32, 128, 16, 16)
+
+[node name="Killzone" parent="." instance=ExtResource("2_10u5o")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_7bw8t")

@@ -1,0 +1,303 @@
+[gd_scene load_steps=9 format=3 uid="uid://otlwq1hp5578"]
+
+[ext_resource type="Script" path="res://scripts/Level_4/Level_4_0/book_4_0.gd" id="1_21ypa"]
+[ext_resource type="Texture2D" uid="uid://2qinx66vvnny" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/SmallStatue.png" id="2_x1s75"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="3_8kuut"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_mn46a"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="5_ct6tg"]
+[ext_resource type="Theme" uid="uid://do13kdurrdyhj" path="res://assets/UI_Button.tres" id="5_ovhve"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="6_sdboh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qik7"]
+size = Vector2(27, 38)
+
+[node name="book_4_0" type="Node2D"]
+script = ExtResource("1_21ypa")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, -24)
+texture = ExtResource("2_x1s75")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -11)
+shape = SubResource("RectangleShape2D_4qik7")
+
+[node name="Page_1" parent="." instance=ExtResource("3_8kuut")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 50.0
+offset_right = 230.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Probability and Probability Theory
+Many problems are uncertain, and not precise. There needs to be a way to handle this uncertainty.  
+
+Probability theory provides us with a consistent framework for the quantification and manipulation of uncertainty. 
+
+Probability also provides a mathematical calculus for reasoning about random events, using random variables (RV), these can be discrete or continous.
+"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 79.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 1/6"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 462.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 2/6"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 56.0
+offset_right = 464.0
+offset_bottom = 298.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Let's say there exists a container. We can label it as a random variable: C, and there are ONLY TWO types of containers: 
+small(C = s), and large (C = l).
+
+If you are given a small container 30% of the time, this means that the probability of receiving a small container is 30% or 
+P(C = s) = 30/100 = 0.3
+
+Since we know that there are only two types of containers, we can also infer that the probability of "
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Page_1"]
+visible = false
+layout_mode = 0
+offset_left = 487.0
+offset_top = 49.0
+offset_right = 702.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Let's say there exists a container. We can label it as a random variable: C.
+
+The container contains two types of pills, a red pill(C = r), or a blue pill(C = b). Blindly taking a pill out results in you discovering that you get a red pill 30% of the time, so the probability of you getting a red pill is 30%, or P(C = r) = 30/100 = 0.3. You can then infer, that since there are only two types of pills in the container, P(C = b) = 70%"
+autowrap_mode = 3
+
+[node name="Page_2" parent="." instance=ExtResource("3_8kuut")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 50.0
+offset_right = 229.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "receiving a large container is 70% or P(C = l) = 70/100 = 0.7
+
+Similarly, if you had a biased coin, labelled as random variable: C, and tossing it resulted in heads(C = h) 80% of the time, you could infer that P(C = h) = 80/100 = 0.8
+
+Since the only other possible outcome is tails(C = t), you can then conclude that the probability of getting tails is 20%, or 
+P(C = t) = 20/100 = 0.2 
+"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 53.0
+offset_right = 462.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Sample space: Sample space, denoted as capital S in this context, refers to the set of all possible events that can occur. 
+
+For example, if you had a fair coin, then there are two possible outcomes: Heads(H) and Tails(T). Therefore, the sample space S = {H,T}. Subsequently, if you had two fair coins, the sample space 
+S = {HH, TT, HT, T}"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 79.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 3/6"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="Page_2"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 462.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 4/6"
+autowrap_mode = 3
+
+[node name="Page_3" parent="." instance=ExtResource("3_8kuut")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label2" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 50.0
+offset_right = 231.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "There are thee axioms of probability:
+1. P(A)  0: 
+The probability of an event occuring is always greater than or equal to zero, and is therefore non-negative.
+
+2. P(A  B) = P(A) + P(B), if the events are non-overlapping 
+(A  B =   ):
+If two events are mutually exclusive, the probability of either event A or B occuring is the probability of A occuring + the probability of B occuring.
+"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 54.0
+offset_right = 463.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "3. P(S) = 1, if S contains all possible events:
+If the sample space contains all possive events, the probability of getting an outcome from the set is 1."
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 76.0
+offset_right = 76.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "≥"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 71.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "∪"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 203.0
+offset_right = 41.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "∩"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 205.0
+offset_right = 81.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "∅"
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 322.0
+offset_right = 462.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 6/6"
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="Page_3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 322.0
+offset_right = 79.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mn46a")
+text = "Page 5/6"
+autowrap_mode = 3
+
+[node name="next" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = 180.0
+offset_top = 37.0
+offset_right = 213.0
+offset_bottom = 55.0
+theme = ExtResource("5_ovhve")
+theme_override_fonts/font = ExtResource("5_ct6tg")
+theme_override_font_sizes/font_size = 8
+text = "next"
+
+[node name="prev" type="Button" parent="."]
+visible = false
+z_index = 6
+offset_left = -222.0
+offset_top = 37.0
+offset_right = -190.0
+offset_bottom = 55.0
+theme = ExtResource("5_ovhve")
+theme_override_fonts/font = ExtResource("5_ct6tg")
+theme_override_font_sizes/font_size = 8
+text = "prev"
+
+[node name="Interact Label" parent="." instance=ExtResource("6_sdboh")]
+visible = false
+offset_left = -54.0
+offset_top = -44.0
+offset_right = 72.0
+offset_bottom = -21.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnckgru6jvmqx"]
+
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="1_i3fye"]
+
+[node name="Interact Label" type="Label"]
+z_index = 2
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.811765, 1, 0.0156863, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_i3fye")
+text = "Press \"E\" to interact"

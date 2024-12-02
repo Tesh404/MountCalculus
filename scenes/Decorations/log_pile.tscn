@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vlupe7u3e6ms"]
+
+[ext_resource type="Texture2D" uid="uid://c6gml2gr6qaj2" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/LogPile.png" id="1_r70vf"]
+
+[node name="log_pile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r70vf")

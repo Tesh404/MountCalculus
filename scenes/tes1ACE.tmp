@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://bge04ejkwln6v"]
+
+[ext_resource type="Script" path="res://scripts/test_quiz.gd" id="1_j5hut"]
+[ext_resource type="Texture2D" uid="uid://b82ghnu1cfbfg" path="res://assets/sprites/Kasaya's Frames/Inventory & chests/1/slot2.png" id="1_vupow"]
+[ext_resource type="FontFile" uid="uid://d02vhpusm3aqm" path="res://assets/fonts/PixelOperator8.ttf" id="2_nqvc6"]
+[ext_resource type="FontFile" uid="uid://cqh1je2vf7jl4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_l4ilp"]
+[ext_resource type="Texture2D" uid="uid://choi0qq60rni2" path="res://assets/sprites/Rocky Roads/Enemies/bear_brown.png" id="3_v08ok"]
+[ext_resource type="Script" path="res://scripts/Button.gd" id="5_0o4mn"]
+
+[sub_resource type="Theme" id="Theme_idu7k"]
+ItemList/colors/font_selected_color = Color(0.337255, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j5hut")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vupow")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 46.0
+offset_right = 593.0
+offset_bottom = 332.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nqvc6")
+theme_override_font_sizes/font_size = 32
+text = "Test"
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_idu7k")
+theme_override_fonts/font = ExtResource("3_l4ilp")
+item_count = 3
+item_0/text = "One"
+item_1/text = "Two"
+item_2/text = "Three"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(559.227, 43.7031)
+scale = Vector2(2.16809, 2.36233)
+texture = ExtResource("3_v08ok")
+region_enabled = true
+region_rect = Rect2(0, 0, 33, 37)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 296.0
+offset_right = 584.0
+offset_bottom = 327.0
+text = "Quit"
+script = ExtResource("5_0o4mn")
+target_scene = "res://scenes/Level_1/Level_1_0/main.tscn"
+
+[connection signal="item_selected" from="VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

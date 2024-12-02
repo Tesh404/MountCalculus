@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfkfabodlgg0q"]
+
+[ext_resource type="Script" path="res://scripts/Level_2/Level_2_0/path_book_2_0.gd" id="1_diuu5"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_e0a1o"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_v2ydw"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="4_deggr"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_iwmbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kuud"]
+size = Vector2(34, 58)
+
+[node name="path_book_2_0" type="Node2D"]
+script = ExtResource("1_diuu5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_v2ydw")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_5kuud")
+
+[node name="Page_1" parent="." instance=ExtResource("2_e0a1o")]
+visible = false
+offset_left = -243.0
+offset_top = -247.0
+offset_right = 239.0
+offset_bottom = 108.0
+
+[node name="Label" type="Label" parent="Page_1"]
+z_index = 6
+layout_mode = 0
+offset_left = 26.0
+offset_top = 58.0
+offset_right = 221.0
+offset_bottom = 298.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_deggr")
+text = "             Question
+
+There are two sets:
+
+A = {5,6,7,8}
+
+
+B = {7,8,9,2}
+
+
+What is A \\ B?"
+
+[node name="Label2" type="Label" parent="Page_1"]
+z_index = 6
+layout_mode = 0
+offset_left = 254.0
+offset_top = 61.0
+offset_right = 449.0
+offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_deggr")
+text = "             Pathway
+
+
+Take the path with the platform
+going UP, if you believe that
+A \\ B = {5,6} (Left Path)
+
+
+Take the path with the platform 
+going DOWN, if you believe that 
+A \\ B = {5,6,9,2} (Right Path)"
+
+[node name="Interact Label" parent="." instance=ExtResource("5_iwmbv")]
+visible = false
+offset_left = -54.0
+offset_top = -45.0
+offset_right = 72.0
+offset_bottom = -22.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

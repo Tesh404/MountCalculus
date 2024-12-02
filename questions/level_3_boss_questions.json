@@ -1,0 +1,52 @@
+[
+	{
+		"question": "What is d/dx[x⁹]?",
+		"options": [ "x⁸", "9", "9x⁸", "18x"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "What is d/dx[x⁷]",
+		"options": [ "7x⁶", "7", "35x", "7x"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "What is d/dx[x¹⁵]",
+		"options": [ "15x¹⁵", "14x¹⁵", "15x¹⁴", "15"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "y = x¹³. What is dy/dx?",
+		"options": [ "x¹³", "13x¹³", "12x¹³", "13x¹²"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "y = 2xᵃ. What is dy/dx?",
+		"options": [ "2", "2axᵃ⁻¹", "2xaᵃ⁻¹", "a⁻¹"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "f(x) = 5, what is f'(x)?",
+		"options": [ "0", "5x", "5x⁴", "25x"],
+		"correctOptionIndex": 0
+	},
+	{
+		"question": "f(x) = 5⁷, what is f'(x)?",
+		"options": [ "5⁶", "5", "35x⁶", "0"],
+		"correctOptionIndex": 3
+	},
+	{
+		"question": "f(x) = 22 + 5x², g(x) = 20x + 3, what is d/dx[f*g]?",
+		"options": [ "(22x)(20x + 3) + (10 + 5x²)(10)", "(10x)(20x + 3) + (22 + 5x²)(20)", "(10x)(20x + 3) + (10 + 5x²)", "(20x)(22x + 10) + (22 + 5x²)(20)"],
+		"correctOptionIndex": 1
+	},
+	{
+		"question": "f(x) = x², g(x) = 5x + 6, what is d/dx[f(g(x))]?",
+		"options": [ "15(2x + 5)", "5(10x + 6)", "10(5x + 6)", "25(2x + 6)"],
+		"correctOptionIndex": 2
+	},
+	{
+		"question": "f(x) = x³, g(x) = 3x - 5, what is d/dx[f(g(x))]?",
+		"options": [ "9(3x - 5)²", "6(6x)", "9(3x - 5)", "27(6x - 5)"],
+		"correctOptionIndex": 0
+	}
+]

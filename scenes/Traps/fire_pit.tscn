@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsw1mll04pfwe"]
+
+[ext_resource type="Texture2D" uid="uid://dh0idx7taydu8" path="res://assets/sprites/Rocky Roads/Enemies/fire.png" id="1_h8tsf"]
+[ext_resource type="PackedScene" uid="uid://ue8b7cou7hon" path="res://scenes/killzone.tscn" id="2_r4u08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul1gu"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyxrm"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2sil"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nikt"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlfx8"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpuya"]
+atlas = ExtResource("1_h8tsf")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lptt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul1gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyxrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2sil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nikt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlfx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpuya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n11q5"]
+size = Vector2(10, 6)
+
+[node name="fire_pit" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6lptt")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_r4u08")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_n11q5")

@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca68qk1lt4pk8"]
+
+[ext_resource type="Script" path="res://scripts/Level_3/Level_3_1/path_book_3_1.gd" id="1_mahxq"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_dppk1"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_j7mje"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_fjvxf"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_mubay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3la1"]
+size = Vector2(36, 61)
+
+[node name="path_book_3_1" type="Node2D"]
+script = ExtResource("1_mahxq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_j7mje")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22.5)
+shape = SubResource("RectangleShape2D_q3la1")
+
+[node name="Page_1" parent="." instance=ExtResource("2_dppk1")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 222.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fjvxf")
+text = "             Question
+
+
+
+
+
+
+What is                ?"
+
+[node name="Label3" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 55.0
+offset_right = 455.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fjvxf")
+text = "             Pathway
+
+
+
+Take the left path if you believe
+it is 
+
+
+
+
+Take the right path if you believe
+it is "
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 160.0
+offset_right = 180.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fjvxf")
+text = "d/dx[3x² + 4]⁵"
+
+[node name="Label4" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 128.0
+offset_right = 402.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fjvxf")
+text = "20[6x² + 12]⁵"
+
+[node name="Label5" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 224.0
+offset_right = 404.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fjvxf")
+text = "30x[3x² + 4]⁴"
+
+[node name="Interact Label" parent="." instance=ExtResource("5_mubay")]
+visible = false
+offset_left = -55.0
+offset_top = -67.0
+offset_right = 71.0
+offset_bottom = -44.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

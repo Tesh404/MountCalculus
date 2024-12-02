@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1uywy62q0p72"]
+
+[ext_resource type="Script" path="res://scripts/Level_3/Level_3_0/path_book_3_0.gd" id="1_x85tn"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_8viec"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_tpape"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_wskqj"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_x35h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5lg"]
+size = Vector2(35, 57)
+
+[node name="path_book_3_0" type="Node2D"]
+script = ExtResource("1_x85tn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_8viec")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_5s5lg")
+
+[node name="Page_1" parent="." instance=ExtResource("2_tpape")]
+visible = false
+offset_left = -242.0
+offset_top = -245.0
+offset_right = 236.0
+offset_bottom = 107.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 225.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wskqj")
+text = "             Question
+
+
+
+f(x) = 15x + 9x³
+
+
+What is f'(x)?"
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 57.0
+offset_right = 457.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wskqj")
+text = "             Pathway
+
+
+Take the upper path if you belive
+that f'(x) = 15 + 27x²
+
+
+
+Take then lower path if you belive
+that f'(x) = 15x + 18x² 
+"
+
+[node name="Interact Label" parent="." instance=ExtResource("5_x35h3")]
+visible = false
+offset_left = -57.0
+offset_top = -41.0
+offset_right = 69.0
+offset_bottom = -18.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

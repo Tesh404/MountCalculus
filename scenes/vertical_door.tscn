@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ykmy42dx8bmu"]
+
+[ext_resource type="Texture2D" uid="uid://cfwq1wb1h2muv" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/ExtraUpdate_DoorsAndLevers/BarDoor.png" id="2_q7rl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at16s"]
+size = Vector2(72.054, 31.9152)
+
+[node name="Vertical_door" type="AnimatableBody2D"]
+rotation = -1.57315
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+rotation = 1.57293
+texture = ExtResource("2_q7rl7")
+region_enabled = true
+region_rect = Rect2(7, 12, 16, 36)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-0.0376594, 16)
+rotation = 1.57293
+texture = ExtResource("2_q7rl7")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(7, 12, 16, 36)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(35.9999, 0.0847335)
+rotation = 1.57293
+texture = ExtResource("2_q7rl7")
+region_enabled = true
+region_rect = Rect2(7, 12, 16, 36)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(35.9622, 16.0847)
+rotation = 1.57293
+texture = ExtResource("2_q7rl7")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(7, 12, 16, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.9706, 7.99999)
+shape = SubResource("RectangleShape2D_at16s")

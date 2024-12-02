@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coqc6pa4wribl"
+path="res://.godot/imported/xDeviruchi - Decisive Battle (Loop).ogg-aa8be5dd2d2584fcb3b91a1db25180ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/8-bit Fantasy/xDeviruchi - Decisive Battle (Loop).ogg"
+dest_files=["res://.godot/imported/xDeviruchi - Decisive Battle (Loop).ogg-aa8be5dd2d2584fcb3b91a1db25180ff.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c62w738asc13u"]
+
+[ext_resource type="Texture2D" uid="uid://cn1qtjs03vias" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/TileableFence32x32px.png" id="1_d06ve"]
+
+[node name="fence" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d06ve")

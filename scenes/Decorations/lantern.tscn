@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerayg10tg2tt"]
+
+[ext_resource type="Texture2D" uid="uid://dqh7ortw4fj3q" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/Lantern.png" id="1_1ilh6"]
+
+[node name="lantern" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ilh6")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwkvnoo6vykh1"]
+
+[ext_resource type="Script" path="res://scripts/Level_4/Level_4_1/path_book_4_1.gd" id="1_t2no2"]
+[ext_resource type="PackedScene" uid="uid://c1m6674vsulu7" path="res://scenes/test_page.tscn" id="2_mxjgp"]
+[ext_resource type="Texture2D" uid="uid://vtgjreycy2vd" path="res://assets/sprites/Props/FantasyPlatformerPropsv2/StaticSprites/BigStatue.png" id="2_noc6i"]
+[ext_resource type="FontFile" uid="uid://clmk2k6ktoqlo" path="res://assets/fonts/monogram/monogram.ttf" id="3_1e2s3"]
+[ext_resource type="PackedScene" uid="uid://dnckgru6jvmqx" path="res://scenes/interact_label.tscn" id="5_1gmw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_444na"]
+size = Vector2(36, 61)
+
+[node name="path_book_4_1" type="Node2D"]
+script = ExtResource("1_t2no2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -24)
+texture = ExtResource("2_noc6i")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22.5)
+shape = SubResource("RectangleShape2D_444na")
+
+[node name="Page_1" parent="." instance=ExtResource("2_mxjgp")]
+visible = false
+offset_left = -243.0
+offset_top = -269.0
+offset_right = 235.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 57.0
+offset_right = 236.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1e2s3")
+text = "              Question
+
+
+Suppose there is a container with 4 red pencils and 5 green pencils.
+
+You pick a pencil at random and you get a red pencil.
+
+What is the conditional probability of a getting a green pencil, now that you already picked a red pencil?
+
+
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Page_1"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 58.0
+offset_right = 459.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1e2s3")
+text = "              Pathway
+
+
+Take the upper path if you believe it is 0.55 or 5/9
+
+
+
+
+Take the lower path if you believe it is 0.625 or 5/8
+
+
+"
+autowrap_mode = 2
+
+[node name="Interact Label" parent="." instance=ExtResource("5_1gmw3")]
+visible = false
+offset_left = -61.0
+offset_top = -66.0
+offset_right = 65.0
+offset_bottom = -43.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
